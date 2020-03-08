@@ -19,6 +19,39 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
+  // let b = [];
+  // let c = [];
+  // if (names){
+  //   const x = names.length;
+  //   for (let i=0;i<=x;i++) {
+  //     let a = names.getRandom();
+  //     b.push(a);
+  //   }
+  //   const y = b.length;
+  //   for (let i=0;i<=y;){
+  //     c[i]+=b.pop();
+  //     if (i % 2 != 0){
+  //       i++;
+  //     }
+  //   }
+  //   return c;
+  // }
+  // else return [];
+
+  if (!names) return [];
+  if (names.length === 0) return [];
+  if (names.length === 2) return [names];
+
+  const pairings = [];
+  while (names.length > 1){
+    pairings.push([names.getRandom(), names.getRandom()]);
+  }
+  if (names.length){
+    pairings.push(names);
+  }
+
+  return pairings;
+
 }
 
 module.exports = pairs;
